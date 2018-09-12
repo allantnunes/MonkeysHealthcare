@@ -1,0 +1,13 @@
+int led = 13; //Porta onde o LED está conectada ao ARDUINO
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+// Loop para deixar o código rolando
+void loop() {
+  digitalWrite(led, HIGH);   // Liga o LED deixando a voltagem HIGH, ou seja, ALTA
+  delay(1000);                       // delay de 1 segundo (1000ms = 1s)
+  digitalWrite(led, LOW);    // Liga o LED deixando a voltagem LOW, ou seja, BAIXA
+  delay(1000);                       // delay de 1 segundo (1000ms = 1s)
+}
