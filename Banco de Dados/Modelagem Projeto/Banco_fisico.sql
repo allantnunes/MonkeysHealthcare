@@ -4,6 +4,7 @@ CREATE TABLE Arduino (
 );
 
 
+
 CREATE TABLE Localidade (
     id_loc int PRIMARY KEY IDENTITY(1,1),
     CEP char(8),
@@ -20,12 +21,13 @@ CREATE TABLE Lab (
 	CONSTRAINT FK_lugar_loc FOREIGN KEY (FK_loc) REFERENCES localidade(id_loc)
 );
 
+
 CREATE TABLE loc_arduino (
     FK_lab int,
     FK_Arduino int,
 	data_ativacao date,
     data_desativacao date,
-	CONSTRAINT FK_lab_loc FOREIGN KEY (FK_lab) REFERENCES localidade(id_loc),
+	CONSTRAINT FK_lab_loc FOREIGN KEY (FK_lab) REFERENCES lab(id_locLab),
 	CONSTRAINT FK_Arduino_loc FOREIGN KEY (FK_Arduino) REFERENCES arduino(id_Arduino)
 );
 
