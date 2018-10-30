@@ -1,62 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Exemplo pescador</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="C:\Users\aluno\Desktop\projeto\js\query.js"></script>
+    <script type="text/javascript" src="C:\Users\aluno\Desktop\projeto\js\jquery.mask.min.js"></script>
+    <script>
+        $("#ceP").mask("00000-000");
+    </script>
 </head>
 
 <body>
-Jogador : <input type="text" id="palpiteJ"> <br>
-Jogador : <input type="text" id="palpiteJ"> <br>
+    
+    CEP:<input type="text" id="ceP"><br>
+    <br>
+    
+    ESTADO:<input type="text" id="ceP"><br>
+    <br>
 
-<button onclick = "jogar()"> jogar</button>
+    ENDEREÇO:<input type="text" id="ceP"><br>
+    <br>
 
-<hr>
-<p id="resultado"></p>
+    LOCALIDADE<input type="text" id="ceP"><br>
+    <br>
 
-<script>
+    N° LABORATÓRIO:<input type="text" id="ceP"><br>
+    <br>
 
-function exibeResultado(ola) {
-document.getElementById("resultado").innerHTML = ola;
-}
-
-function getValor(id){
-return document.getElementById(id).value;
-}
-
-function jogar(){
-
-msg = "ERRO";
-
-var jogador = parseInt(getValor("palpiteJ")); 
-
-if (jogador >= 0 && jogador <= 5){
-
-var computador = parseInt(Math.random() * 5);
-
-msg = "O Jogador colocou " + jogador + " dedos <br>" +
-"O Computador colocou " + computador + " dedos <br>" +
-"O ganhador foi o: ";
-
-var soma = jogador + computador;
-
-if (soma % 2 == 0){
-msg = msg + "Jogador";
-}
-else{
-msg = msg + "Computador"
-}
-}
-else{
-msg = "Jogador, só coloque dedos entra 0..5!!";
-}
-exibeResultado(msg);
-}
-
-
-
-</script>
+    
+    
+    
 </body>
 </html>
