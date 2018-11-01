@@ -1,0 +1,187 @@
+#menu_topo{
+    height: auto;
+    background-color: red;
+}
+#menu_topo span{
+    margin-right: 5px;
+}
+
+#mini_logo img{
+    background-color: #fff;
+    width: 50px;
+    height: auto;
+    margin: 0px;
+}
+
+#menu_topo img{
+    height: 50px;
+    width: auto;
+}
+
+#li_funcionario{
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#menu_topo a:link, a:visited{
+    color: #fff;
+}
+#menu_topo a:hover, a:active, a:focus{
+    color: #000;
+}
+
+.menu_dropdown a:visited, .gatilho_menu{
+    color: #fff;
+}
+
+.menu_dropdown a:enabled{
+    color: #000;
+}
+
+.menu_dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.menu_dropdown ul li a:hover, a:active{
+    color: #fff;
+    background-color: #ff0000;
+}
+
+#topo .menu_dropdown a:visited, .gatilho_menu{
+    color: #fff;
+}
+
+#topo .menu_dropdown{
+    color: #fff;
+}
+
+#topo .menu_dropdown ul li a:hover, a:active{
+    color: #fff;
+    background-color: #ff0000;
+}
+
+#topo .menu_dropdown ul li a{
+    color: #000;
+}
+
+#topo .dropdown-menu a:link{
+    color:#000;
+}
+
+#topo .menu_dropdown a:visited{
+    color: #000000;
+}
+
+.icon_home{
+    width: 100px;
+    margin-right: 10px;
+    height: auto;
+    vertical-align:middle;
+    float:left;
+}
+
+.subtitulo_home{
+    color: #d00;
+}
+
+.hvr-shutter-out-horizontal{
+    background: #ff0000;
+}
+
+.hvr-shutter-out-horizontal:before{
+    background: #fff;
+}
+.hvr-shutter-out-horizontal:focus{
+    background: #f00;
+}
+
+.hvr-shutter-out-horizontal:active,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:hover{
+    background: #f00;
+    color:#000;
+}
+
+.modal{
+    background: rgba(255, 0, 0, 0.301);
+}
+
+.modal-content{
+    background-color: #c5bfbf;
+}
+
+#conteudo {
+	height: auto;
+	width: auto;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 50px;
+	margin-bottom: 60px;
+}
+
+#titulo_conteudo {
+	font: normal normal bold 35px/1 Arial, Helvetica, sans-serif;
+	color: rgba(255, 0, 0, 1);
+	padding-bottom: 40px;
+}
+
+.btn{
+    background-color: #d00;
+    color: #fff;
+}
+
+.btn:hover{
+    background-color: #aaa;
+    color: #000;
+}
+
+#tempDashboard{
+    position: absolute;
+    top: 38%;
+    left: 29%;
+    font-size: 24px; 
+    font-weight: bolder;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+}
+
+#umiDashboard{
+    position: absolute;
+    top: 39%;
+    left: 30%;
+    font-size: 24px; 
+    font-weight: bolder;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+}
+
+#dadosAtuais{
+    height: auto;
+    border: 1px solid;
+    border-color: red;
+    border-radius: 2px;
+}
+
+.card-body .card-subtitulo{
+    font-size: 18px; 
+    font-weight: bolder;
+    color: white;
+}
+
+.card-body .card-span{
+    font-size: 18px; 
+    font-weight: bolder;
+}
+
+.botao_padrao{
+    padding: 10px;
+    background: #d00;
+    color: #fff;
+    width: 200px;
+}
+
+.botao_padrao:hover{
+    background-color: #a00;
+    color: #aaa;
+}

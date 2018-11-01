@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- HOVER EFFECTS (da hora) -->
+    <link rel="stylesheet" href="../stylesheets/hover-min.css">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- ICONE E TITULO ABA NAVEGADOR -->
+    <link rel="icon" href="../images/mh_min_logo2.png">
+    <title>Monkeys Healthcare</title>
+
+    <!-- CSS PERSONALIZADO -->
+    <link rel="stylesheet" href="../stylesheets/estilo.css">
+
+    <!-- CHART JS -->
+    <script src="../javascripts/Chart.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.13/css/mdb.min.css" rel="stylesheet">
+
+    <!-- JAVASCRIPT PERSONALIZADO -->
+    <script src="../javascripts/monkeys.js"></script>
+
+</head>
+
+<body onload="popSelects()">
+
+    <!-- INCLUIR /html/cabecalho.html -->
+    <span id="topo"></span>
+
+    <div class="container-fluid">
+        <!-- Div Localidades e Sensores -->
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-1">
+                <h4><b>Local:</b></h4><select class="form-control" id="localidades">
+                    <!-- Ler as localidades do banco aqui -->
+                    <option selected disabled>Selecione a Unidade</option>
+                </select>
+            </div>
+            <div class="col-sm-3 col-sm-offset-1">
+                <h4><b>Laboratório:</b></h4><select class="form-control" id="labs">
+                    <!-- Ler os sensores do banco aqui -->
+                    <option selected disabled>Selecione um Laboratório</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Div nome do arduíno -->
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-1">
+                <h4><b>Sensor: </b><span id="nomeArduino"></span></h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3 col-sm-offset-2">
+                <!-- ICONE E ESTATISTICA TEMPERATURA -->
+                <div class="row card" style="padding: 10px;">
+                    <center><span style="font-size: 20px; color: red;"><b>Temperatura</b></span></center>
+                    <div class="card-body">
+                        <div class="col-sm-4 hvr-wobble-skew">
+                            <img src="../images/temp_icon.png" style="width: 125px; height: auto;">
+                            <span id="tempDashboard"></span>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <br>
+                            <b class="card-subtitulo" style="color:orange">Média: </b>
+                            <span id="mediaTemp" class="card-span"></span><br>
+                            <b class="card-subtitulo" style="color: red;">Máxima: </b></h4>
+                            <span id="maxTemp" class="card-span"></span><br>
+                            <b class="card-subtitulo" style="color: #6666ff">Mínima: </b></h4>
+                            <span id="minTemp" class="card-span"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-sm-offset-2">
+                <div class="row card" style="padding: 10px">
+                    <center><span style="font-size: 20px; color: blue;"><b>Umidade</b></span></center>
+                    <div class="card-body">
+                        <!-- ICONE E ESTATISTICA UMIDADE -->
+                        <div class="col-sm-4 hvr-wobble-skew">
+                            <img src="../images/umi_icon50.png" style="width: 125px; height: auto;">
+                            <span id="umiDashboard"></span>
+                        </div>
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <br>
+                            <b class="card-subtitulo" style="color:orange">Média: </b>
+                            <span id="mediaUmi" class="card-span"></span><br>
+                            <b class="card-subtitulo" style="color: red;">Máxima: </b></h4>
+                            <span id="maxUmi" class="card-span"></span><br>
+                            <b class="card-subtitulo" style="color: #6666ff">Mínima: </b></h4>
+                            <span id="minUmi" class="card-span"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top: 10px;">
+            <!-- GRÁFICO TEMPERATURA -->
+            <div class="col-sm-5 col-sm-offset-1">
+                <canvas id="chartTemp"></canvas>
+            </div>
+            <!-- GRÁFICO UMIDADE -->
+            <div class="col-sm-5" style="margin-right: 8.33333333%">
+                <canvas id="chartUmi"></canvas>
+            </div>
+        </div>
+
+    </div>
+</body>
+<!-- JAVASCRIPT PERSONALIZADO DASHBOARD-->
+<script src="../javascripts/monkeys_dashboard.js"></script>
+
+</html>

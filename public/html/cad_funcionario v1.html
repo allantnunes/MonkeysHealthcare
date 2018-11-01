@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- HOVER EFFECTS (da hora) -->
+    <link rel="stylesheet" href="../stylesheets/hover-min.css">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- ICONE E TITULO ABA NAVEGADOR -->
+    <link rel="icon" href="../images/mh_min_logo2.png">
+    <title>Monkeys Healthcare</title>
+
+    <!-- CSS PERSONALIZADO -->
+    <link rel="stylesheet" href="../stylesheets/estilo.css">
+
+    <!-- JAVASCRIPT PERSONALIZADO -->
+    <script src="../javascripts/monkeyshealthcare.js"></script>
+
+    <script type="text/javascript">
+        $(function($) {
+            $("#cpf").mask("999.999.999-99");
+            $("#telefone").mask("9999-9999");
+            $("#dataNasc").mask("99/99/9999");
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- INCLUIR /html/cabecalho.html -->
+    <span id="topo"></span>
+
+    
+    <!-- CONTEUDO -->
+    <div id="conteudo">
+        <div id="titulo_conteudo" class="text-center">Cadastro de
+            Funcionário</div>
+
+        <!-- CORPO CONTEUDO -->
+        <div id="corpo_conteudo">
+            <form name="cad_funcionario" action="#" onsubmit="cadastrarFuncionario()" method="POST">
+
+                <!-- ID -->
+                <div class="row">
+                    <div class="col-md-2 col-md-offset-1">
+                        <label for="id">Id:</label>
+                        <br>
+                        <input type="text" name="id" disabled readonly="readonly" placeholder="ID é gerado sozinho!">
+                    </div>
+                </div>
+
+                <!-- NOME -->
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-1">
+                        <label>Nome completo:</label><br>
+                        <input type="text" name="nomeCompleto" id="nomeCompleto" style="width: 100%;" required>
+                    </div>
+                </div>
+
+                <!-- CPF & DATA NASC -->
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-1">
+                        <label>CPF:</label><br>
+                        <input type="text" name="cpf" id="cpf" style="width: 100%;" maxlength="11"; required>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Data Nasc:</label><br>
+                        <input type="text" name="dataNasc" id="dataNasc" style="width: 100%;">
+                    </div>
+                </div>
+
+                <!-- EMAIL & TEL  -->
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-1">
+                        <label>E-mail:</label><br>
+                        <input type="email" name="email" id="email" style="width: 100%;" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label>Telefone:</label><br>
+                        <input type="tel" name="telefone" id="telefone" style="width: 100%;">
+                    </div>
+                </div>
+
+                <!-- LOGIN, SENHA E CONF SENHA -->
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1">
+                        <label>Login:</label><br>
+                        <input type="text" name="login" id="login" style="width: 100%;" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Senha:</label><br>
+                        <input type="password" name="senha" id="senha" style="width: 100%;" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Confirmar senha:</label><br>
+                        <input type="password" name="confSenha" id="confSenha" style="width: 100%;" required>
+                    </div>
+
+                </div>
+
+                <!-- CARGO -->
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1" style="height: 100%;">
+                        <label>Cargo:</label><br>
+                        <label class="radio-inline" style="padding-top: 0px;">
+                            <select class="form-control" id="localidade">
+                                <!-- Ler localidades do banco aqui -->
+                                <option selected disabled>Selecione sua localidade</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-4" style="height: 100%;">
+                        <label>Cargo:</label><br>
+                        <label class="radio-inline" style="padding-top: 0px;">
+                            <input required type="radio" name="cargo" value="administrador"> Administrador<br>
+                            <input required type="radio" name="cargo" value="monitor"> Monitor<br>
+                        </label>
+
+                    </div>
+                </div>
+             
+
+                <!-- BOTOES -->
+                <div class="row">
+                    <div class="col-md-1 col-md-offset-8">
+                        <input type="reset" class="btn hvr-bounce-to-top" id="limpar" value="Limpar">
+                    </div>
+
+                    <div class="col-md-1">
+                        <input class="btn hvr-bounce-to-bottom" type="submit" id="cadastrar" value="Cadastrar">
+                    </div>
+                </div>
+            </form>
+
+            <hr>
+
+            <p id="outputCad">
+
+            </p>
+
+        </div>
+    </div>
+    <div style="margin-top: 60px;">
+        <footer class="text-center">
+            <span style="line-height: 60px;">Copyright © 2018 <a href="#">Monkeys Business</a></span>
+        </footer>
+    </div>
+</body>
+
+</html>

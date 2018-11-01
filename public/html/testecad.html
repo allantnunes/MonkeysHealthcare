@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+        <title>Validar Formulário com JavaScript</title>
+        <meta charset="utf-8">
+        <link href="../stylesheets/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="../stylesheets/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../javascripts/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="../javascripts/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../javascripts/bootstrap-notify.min.js"></script>
+        <script type="text/javascript" src="../javascripts/jquery.mask.min.js"></script>
+        <script src="../javascripts/Cad_usuario.js"></script>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+        <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    
+        <!-- HOVER EFFECTS (da hora) -->
+        <link rel="stylesheet" href="../stylesheets/hover-min.css">
+    
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+        <!-- ICONE E TITULO ABA NAVEGADOR -->
+        <link rel="icon" href="../images/mh_min_logo2.png">
+        <title>Monkeys Healthcare</title>
+    
+        <!-- CSS PERSONALIZADO -->
+        <link rel="stylesheet" href="../stylesheets/estilo.css">
+    
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.13/css/mdb.min.css" rel="stylesheet">
+    
+        <!-- JAVASCRIPT PERSONALIZADO -->
+        <script src="../javascripts/monkeys.js"></script>
+    
+    </head>
+    
+    <body onload="popLocalidade()">
+    
+        <!-- INCLUIR /html/cabecalho.html -->
+        <span id="topo"></span>
+    
+        <h1>Cadastrar Usuário</h1>
+        <form name="formuser" action="/banco/usuariosCad1" method="POST" return false>
+            <div class="container">
+                <div class="form-group" role="form">
+                    <label>Nome</label>
+                    <input type="text" style="width:200px; height:25px;" id="nome" name="nome" placeholder="Nome">
+                </div>
+    
+                <!-- <div class="form-group" role="form">
+                    <label>Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Telefone" />
+                </div>
+    
+                <div class="form-group" role="form">
+                    <label>CPF</label>
+                    <input type="text" name="cpf" maxlength="11" onblur="return verificarCPF(this.value)" placeholder="CPF" />
+                </div>
+     -->
+                <div>
+                    <label> Local de trabalho: </label>
+                    <select class="form-control" id="localidadesUsuario" name="localidadesUsuario">
+                        <!-- Ler as localidades do banco aqui -->
+                        <option selected disabled>Selecione a Unidade</option>
+                    </select>
+                </div>
+    
+                <!-- <div class="form-group" role="form"></div>
+                <label>E-mail</label>
+                <input type="text" style="width:200px; height:25px;" id="email" placeholder="E-mail">
+    
+                <div class="form-group" role="form"></div>
+                <label>Usuário</label>
+                <input type="text" style="width:200px; height:25px;" id="usuario" placeholder="Usuário">
+    
+    
+    
+                <div class="form-group" role="form">
+                    <label>Senha</label>
+                    <input type="password" style="width:200px; height:25px;" id='senha' placeholder="Senha" />
+                    <label>Confirmar Senha</label>
+                    <input type="password" style="width:200px; height:25px;" id='senha1' placeholder="Confirmar Senha" />
+                </div> -->
+    
+                <input type="submit" class="btn btn-primary" onclick="return validar()">
+            </div>
+        </form>
+    </body>
+    
+    </html>

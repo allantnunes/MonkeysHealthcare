@@ -1,0 +1,119 @@
+<!-- SEM LOGIN-->
+<!-- Menu topo 
+<div class="container-fluid">
+    <div id="menu_topo" class="row">
+        <div id="mini_logo" class="col-sm-1">
+            <a href="#"><img class="hvr-buzz-out" src="../images/mh_min_logo2.png"></a>
+        </div>
+        <div id="menu_topo" class="col-sm-offset-5 col-sm-5">
+            <ul class="nav navbar-nav">
+                <li><a href="/html/home.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li><a href="/html/dashboard.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-info-sign"></span>Quem
+                        somos</a></li>
+                <li><a href="#" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-education"></span>A
+                        equipe</a></li>
+                <li><a href="#" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-question-sign"></span>Ajuda</a></li>
+                <li><a href="#" class="hvr-shutter-out-horizontal" data-toggle="modal" data-target="#modalLogin"><span
+                            class="glyphicon glyphicon-log-in"></span>Login</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>-->
+
+<!-- Modal -->
+<div class="modal fade" id="modalLogin" role="document">
+    <div class="modal-dialog">
+
+        <!-- Conteúdo do Moda-->
+        <div class="modal-content">
+            <!-- Header - Titulo e botão de fechar -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Preencha as credenciais para acessar o sistema.</h4>
+            </div>
+            <!-- Corpo - Campos ou mensagens -->
+            <div class="modal-body">
+                <span class="glyphicon glyphicon-user"></span><label>Usuário/E-mail:</label>
+                <input id="usuarioLogin" class="form-control" type="text" required><br>
+
+                <span class="glyphicon glyphicon-lock"></span><label>Senha:</label>
+                <input id="usuarioSenha" class="form-control" type="password" required><br>
+            </div>
+            <!-- Footer - botão ligado a função logarUsuario -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="background: red; color: white;">Fechar</button>
+                <button type="button" class="btn btn-default" onclick="logarUsuario()">Login</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- LOGIN ADMINISTRADOR -->
+<div class="container-fluid">
+    <div id="menu_topo" class="row">
+        <div id="mini_logo" class="col-sm-1">
+            <a href="#"><img class="hvr-buzz-out" src="../images/mh_min_logo2.png"></a>
+        </div>
+        <div id="menu_topo" class="col-sm-offset-4 col-sm-7">
+            <ul class="nav navbar-nav">
+                <li><a href="/html/home.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                <li><a href="/html/dashboard.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-stats"></span>Dashboard</a></li>
+                <li class="dropdown menu_dropdown">
+                    <a class="hvr-shutter-out-horizontal hvr-icon-down dropdown-toggle gatilho_menu" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-copy"></span>Cadastros
+                        <span class="caret hvr-icon"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/html/form_usuario.html"><span class="glyphicon glyphicon-user"></span> Cadastro de Funcionário</a></li>
+                        <li><a><span class="glyphicon glyphicon-dashboard"></span> Cadastro de Sensor</a></li>
+                        <li><a><span class="glyphicon glyphicon-home"></span> Cadastro de Localidade</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown menu_dropdown">
+                    <a class="hvr-shutter-out-horizontal hvr-icon-down dropdown-toggle gatilho_menu" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-list"></span>Listas
+                        <span class="caret hvr-icon"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a><span class="glyphicon glyphicon-user"></span> Lista de Funcionário</a></li>
+                        <li><a><span class="glyphicon glyphicon-dashboard"></span> Lista de Sensor</a></li>
+                        <li><a><span class="glyphicon glyphicon-home"></span> Lista de Localidade</a></li>
+                    </ul>
+                </li>
+                <li id="li_funcionario">Bem vindo, #Usuário <img src="../images/cientista_icon.png" class="hvr-buzz-out"></li>
+                <li><a href="#" class="hvr-shutter-out-horizontal" data-toggle="modal" data-target="#modalLogin"><span
+                            class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN MONITOR
+<div class="container-fluid">
+        <div id="menu_topo" class="row">
+            <div id="mini_logo" class="col-sm-1">
+                <a href="#"><img class="hvr-buzz-out" src="../images/mh_min_logo2.png"></a>
+            </div>
+            <div id="menu_topo" class="col-sm-offset-5 col-sm-6">
+                <ul class="nav navbar-nav">
+                    <li><a href="/html/home.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                    <li><a href="/html/dashboard.html" class="hvr-shutter-out-horizontal"><span class="glyphicon glyphicon-stats"></span>Dashboard</a></li>
+                    <li class="dropdown menu_dropdown">
+                        <a class="hvr-shutter-out-horizontal hvr-icon-down dropdown-toggle gatilho_menu" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-list"></span>Listas
+                            <span class="caret hvr-icon"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a><span class="glyphicon glyphicon-user"></span> Lista de Funcionário</a></li>
+                            <li><a><span class="glyphicon glyphicon-dashboard"></span> Lista de Sensor</a></li>
+                            <li><a><span class="glyphicon glyphicon-home"></span> Lista de Localidade</a></li>
+                        </ul>
+                    </li>
+                    <li id="li_funcionario">Bem vindo, #Usuário <img src="../images/cientista_icon.png" class="hvr-buzz-out"></li>
+                    <li><a href="#" class="hvr-shutter-out-horizontal" data-toggle="modal" data-target="#modalLogin"><span
+                                class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+    
+                </ul>
+            </div>
+        </div>
+    </div> -->

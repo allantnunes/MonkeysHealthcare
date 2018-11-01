@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<script type="text/javascript" src="../javascripts/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="../javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../javascripts/bootstrap-notify.min.js"></script>
+	<script type="text/javascript" src="../javascripts/jquery.mask.min.js"></script>
+	<script src="../javascripts/Cad_usuario.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+	<script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+	<!-- HOVER EFFECTS (da hora) -->
+	<link rel="stylesheet" href="../stylesheets/hover-min.css">
+
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- ICONE E TITULO ABA NAVEGADOR -->
+	<link rel="icon" href="../images/mh_min_logo2.png">
+	<title>Monkeys Healthcare</title>
+
+	<!-- CSS PERSONALIZADO -->
+	<link rel="stylesheet" href="../stylesheets/estilo.css">
+
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.13/css/mdb.min.css" rel="stylesheet">
+
+	<!-- JAVASCRIPT PERSONALIZADO -->
+	<script src="../javascripts/monkeys.js"></script>
+
+</head>
+
+<body onload="popLocalidade()">
+
+	<!-- INCLUIR /html/cabecalho.html -->
+	<span id="topo"></span>
+
+	<div class="text-center">
+		<h1>Cadastro de Usuário</h1>
+	</div>
+
+	<form name="formuser" action="/banco/usuariosCad" method="POST" return false>
+
+		<div class="container">
+			<!-- ID -->
+			<div class="row">
+				<div class="col-md-2 col-md-offset-3">
+					<label for="id">Id:</label><br>
+					<input class="form-control" type="text" name="id" disabled readonly="readonly" placeholder="ID é gerado sozinho!">
+				</div>
+			</div><br>
+			
+			<!-- NOME -->
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<label>Nome completo:</label><br>
+					<input class="form-control" type="text" id="nome" name="nomeUsuario" placeholder="Nome" style="width: 100%;" required>
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-3">
+					<label>CPF</label><br>
+					<input class="form-control" style="width: 100%;" type="text" name="cpf" maxlength="11" onblur="return verificarCPF(this.value)" placeholder="CPF" />
+				</div>
+				<div class="col-md-3">
+					<label>Telefone</label><br>
+					<input class="form-control" style="width: 100%;" type="tel" id="telefone" name="telefoneUsuario" placeholder="Telefone" />
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<label>Local de trabalho:</label><br>
+					<select class="form-control" id="localidadesUsuario" name="localidadesUsuario">
+						<!-- Ler as localidades do banco aqui -->
+						<option selected disabled>Selecione a Unidade</option>
+					</select>
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-3">
+					<label>E-mail</label><br>
+					<input class="form-control" style="width: 100%;" type="text" id="email" name="emailUsuario" placeholder="E-mail">
+				</div>
+				<div class="col-md-3">
+					<label>Usuário</label><br>
+					<input class="form-control" style="width: 100%;" type="text" id="usuario" name="nicknameUsuario" placeholder="Usuário">
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-3 col-md-offset-3">
+					<label>Senha</label><br>
+					<input class="form-control" style="width: 100%;" type="password" id='senha' name="senhaUsuario" placeholder="Senha" />
+				</div>
+				<div class="col-md-3">
+					<label>Confirmar Senha</label><br>
+					<input class="form-control" style="width: 100%;" type="password" id='senha1' placeholder="Confirmar Senha" />
+				</div>
+			</div><br>
+
+			<div class="row">
+				<div class="col-md-offset-7 col-md-3">
+					<input type="submit" class="botao_padrao hvr-shutter-out-horizontal" onclick="return validar()">
+				</div>
+			</div>
+			<br><br>
+		</div>
+	</form>
+</body>
+
+</html>
