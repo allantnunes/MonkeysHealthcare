@@ -1,36 +1,89 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
-    <script type="text/javascript" src="C:\Users\aluno\Desktop\projeto\js\query.js"></script>
-    <script type="text/javascript" src="C:\Users\aluno\Desktop\projeto\js\jquery.mask.min.js"></script>
-    <script>
-        $("#ceP").mask("00000-000");
-    </script>
+
 </head>
 
 <body>
+
     
+
     CEP:<input type="text" id="ceP"><br>
-    <br>
-    
-    ESTADO:<input type="text" id="ceP"><br>
-    <br>
 
-    ENDEREÇO:<input type="text" id="ceP"><br>
-    <br>
-
-    LOCALIDADE<input type="text" id="ceP"><br>
-    <br>
-
-    N° LABORATÓRIO:<input type="text" id="ceP"><br>
     <br>
 
     
+
+    ESTADO:<input type="text" id="est"><br>
+
+    <br>
+
+
+
+    ENDEREÇO:<input type="text" id="ende"><br>
+
+    <br>
+
+
+
+    LOCALIDADE<input type="text" id="local"><br>
+
+    <br>
+
+
+
+    N° LABORATÓRIO:<input type="text" id="lab"><br>
+
+    <br>
+    <button onclick="funcaoEnviar()">Enviar</button><br>
+    <br>
+
+    Dados Informados
+    <p id="dados"></p><br>
+    <br>
+
+
+    <p id="1"></p><br>       
+    <br>                     
+     
+    <p id="2"></p><br>       
+    <br>                     
+   
+    <p id="3"></p><br>
+
+    <p id="4"></p><br>
+
+    <p id="5"></p><br>
+   
+
+ <script>
+     function funcaoEnviar(){
+    var cep = document.getElementById("ceP").value;
+    var estado = document.getElementById("est").value;
+    var endereço = document.getElementById("ende").value;
+    var localidade = document.getElementById("local").value;
+    var lab = document.getElementById("lab").value;
+
+    document.getElementById("1").innerHTML= cep;
+    document.getElementById("2").innerHTML= est;
+    document.getElementById("3").innerHTML= ende;
+    document.getElementById("4").innerHTML= localidade;
+    document.getElementById("5").innerHTML= lab;
+}
+ </script>
+
     
-    
+
 </body>
+
 </html>
