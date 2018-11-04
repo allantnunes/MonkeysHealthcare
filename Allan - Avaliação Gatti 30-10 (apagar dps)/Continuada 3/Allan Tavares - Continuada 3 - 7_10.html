@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Might-Nights</title>
+    <script>
+    function cadastrarSorteio(){
+        var idade = document.getElementById("idade").value;
+        var sexo = "";
+        var sorteioElegivel = "";
+
+        //Validação de idade inicial
+        if(idade < 60){
+            alert("Por favor, corrigir o campo IDADE.");
+            return;
+        }
+
+        //Validação e distribuição dos valores
+        if(document.getElementById("feminino").checked){
+            sexo = "F";
+        } else if(document.getElementById("masculino").checked){
+            sexo = "M";
+        }else{
+            alert("Por favor, selecione o SEXO.");
+        }
+
+        if(sexo == "F" && idade>=60 && idade<=70){
+            sorteioElegivel += "S1 ";
+        }
+        if(idade >= 68 && idade <= 75){
+            sorteioElegivel += "S2 ";
+        }
+        if(sexo == "F" && idade >= 75){
+            sorteioElegivel += "S3 ";
+        }
+        if(sexo == "M" && idade >= 75){
+            sorteioElegivel += "S4 ";
+        }
+
+        if(sexo == "M" && idade>=60 && idade<68){
+            sorteioElegivel += "ST ";
+        }
+
+        document.getElementById("outputSorteio").innerHTML = sorteioElegivel;
+
+
+    }
+
+    function zerarRadio(){
+        document.getElementById("feminino").checked = false;
+        document.getElementById("masculino").checked = false;
+    }
+    
+    </script>
+</head>
+<body>
+    <h4>Sorteio - Might-Nights</h4>
+    <p>
+        Prêmios e elegibilidade:<br>
+        ·(Sorteio 1) 4 forno micro-ondas: para mulheres com idade entre 60 a 70 anos;<br>
+
+        ·(Sorteio 2) 2 sofás modulares em couro sintético (5 peças): para pessoas com idade entre 68 a 75 anos;<br>
+            
+        ·(Sorteio 3) 1 TV de 60”: para mulheres com idade superior ou igual a 75 anos.<br>
+            
+        ·(Sorteio 4) 1 TV de 60”: para homens com idade superior ou igual a 75 anos.<br>
+    </p>
+    <table>
+        <tr>
+            <td>Idade:</td>
+            <td><input id="idade" type="number" min="60" max="110" required></td>
+        </tr>
+        <tr>
+            <td>Sexo:</td>
+            <td><input type="radio" name="sexo" id="masculino" value="M"> Masculino<br>
+                <input type="radio" name="sexo" id="feminino" value="F"> Feminino</td>
+            <td><button onclick="zerarRadio()">Resetar radiobuttons</button></td>
+        </tr>
+    </table>
+    <button onclick="cadastrarSorteio()">Cadastrar para Sorteio</button>
+    <hr>
+    <h3>Sorteio elegível: <span id="outputSorteio"></span></h3>
+</body>
+</html>
